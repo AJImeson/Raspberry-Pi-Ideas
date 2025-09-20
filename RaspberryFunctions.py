@@ -1,6 +1,4 @@
 
-
-
 def Start(): # Booting script
     
 	print('Hello from Raspberry Pi! 🍓')
@@ -8,20 +6,24 @@ def Start(): # Booting script
 
 Start()
 
-def Files(directory: str) -> list: # Return files from directory
+def File_Storage(): # File Storing Function
     
-    return [f for f in os.listdir(directory)if os.path.isfile(os.path.join(directory, f))]
+	def Files(directory: str) -> list: # Return files from directory
+		
+		return [f for f in os.listdir(directory)if os.path.isfile(os.path.join(directory, f))]
 
-def Save_Files(uploaded_file, save_path: str): # Save uploaded file to directory
-    
-	with open(save_path, 'wb') as f:
-		f.write(uploaded_file.read())
+	def Save_Files(uploaded_file, save_path: str): # Save uploaded file to directory
+		
+		with open(save_path, 'wb') as f:
+			f.write(uploaded_file.read())
+   
+File_Storage()
   
 def Media_Streaming():
         
 	from flask import Flask, send_file # For web based application 
 
-	app = Flask(__name__)
+	app = Flask(__name__) # Creates Object 
 
 	@app.route('/stream/<filename>') # When web application is being used, boots media and returns to user
 	def stream_media(filename):
