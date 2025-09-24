@@ -1,5 +1,4 @@
-
-
+# Functions for Raspberry Pi Project
 
 def Start(): # Booting script
     
@@ -9,5 +8,5 @@ def Start(): # Booting script
 Start()
 
 
-    
+ 
         
