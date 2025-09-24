@@ -1,5 +1,4 @@
-# Connection class
-
+# connect.py
 # import paramiko
 import sys
 from RaspberryFunctions import Start
@@ -16,4 +15,3 @@ class Connect: # Remote Connect script
        self.remote_path = remote_path
     
 def run(self):
-        pass
